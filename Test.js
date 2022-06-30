@@ -81,3 +81,22 @@
 //   }
 //   return true;
 // };
+
+function rot13(str) {
+  return str
+    .split("")
+    .map((item) => {
+      let charCode = item.charCodeAt();
+      let calculatedValue = charCode - 64 + 13;
+      if (charCode < 65 || charCode > 90) {
+        return item;
+      } else if (charCode - 64 + 13 > 26) {
+        return String.fromCharCode(charCode + 13 - 26);
+      } else {
+        return String.fromCharCode(charCode + 13);
+      }
+    })
+    .join("");
+}
+
+console.log(rot13("SERR-PBQR PNZC"));
