@@ -1,5 +1,7 @@
 // This saves alot of memory in larger scale application because the method sayName is only occupying a memory it is not being created/copied each time object is created as in
 // previous example
+
+// Prototypal Inheritance
 function Student() {}
 
 Student.prototype.sayName = function () {

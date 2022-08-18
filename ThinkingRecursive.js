@@ -26,7 +26,7 @@ let traverseUser = (user, parent) => {
   for (const key in user) {
     if (typeof user[key] === "object") {
       _parent = parent + "_" + key;
-      return traverseUser(user[key], _parent);
+      traverseUser(user[key], _parent);
     } else {
       finalUser[parent + "_" + key] = user[key];
     }
