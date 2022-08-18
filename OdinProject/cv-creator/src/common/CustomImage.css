@@ -11,6 +11,18 @@ input[type="file"] {
   justify-content: space-between;
 }
 
-.custom-image {
+.custom-image-div {
   display: flex;
+}
+
+.custom-image {
+  width: 220px;
+  height: 220px;
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: 0px;
+  margin-left: 20px;
+  display: table;
+  position: relative;
+  vertical-align: middle;
 }

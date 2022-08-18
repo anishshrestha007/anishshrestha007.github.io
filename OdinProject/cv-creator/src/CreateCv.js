@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useReducer } from "react";
+
 import CssBaseline from "@mui/material/CssBaseline";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -16,6 +18,10 @@ import PersonalInformation from "./PersonalInformation";
 import Experience from "./Experience";
 import Education from "./Education";
 import Review from "./Review";
+import reducer from "./Reducer";
+
+import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
 
 function Copyright() {
   return (
@@ -30,21 +36,57 @@ function Copyright() {
   );
 }
 
+const cvInfo = {
+  personalInformation: {
+    firstName: "Anish",
+    lastName: "Shrestha",
+    title: "Senior Software Engineer",
+    address: "22 Abery Street, Plumstead, London, SE18 1DD",
+    phone: "+447837874176",
+    email: "anishronnie@gmail.com",
+    description:
+      "Senior Full Stack Software Engineer with experience in writing modular, secure and well-tested front-end code with React framework for about 5 years and working as .Net developer mostly as .Net Core.Supportive and enthusiastic team player dedicated to streamlining processes and efficiently resolving project issues.",
+    photo: "",
+    github: "https://github.com/anishshrestha007",
+    linkedin: "https://www.linkedin.com/in/anish-shrestha-331712152/",
+  },
+  experienceList: [],
+  educationList: [],
+};
+
 const steps = ["Personal Information", "Experience", "Education", "Review"];
 
-function getStepContent(step) {
+function getStepContent(step, dispatch, cv) {
   switch (step) {
     case 0:
-      return <PersonalInformation />;
+      return (
+        <PersonalInformation
+          personalInfo={cv.personalInformation}
+          dispatch={dispatch}
+        />
+      );
     case 1:
-      return <Experience />;
+      return (
+        <Experience experienceInfo={cv.experienceList} dispatch={dispatch} />
+      );
     case 2:
-      return <Education />;
+      return <Education educationInfo={cv.educationList} dispatch={dispatch} />;
     case 3:
-      return <Review />;
+      return <Review cvInfo={cv} />;
     default:
       throw new Error("Unknown step");
   }
+}
+
+function printDocument() {
+  const input = document.getElementById("resume-wrapper");
+  html2canvas(input).then((canvas) => {
+    const imgData = canvas.toDataURL("image/png");
+    const pdf = new jsPDF();
+    pdf.addImage(imgData, "JPEG", 0, 0);
+    //pdf.output("dataurlnewwindow");
+    pdf.save("download.pdf");
+  });
 }
 
 const theme = createTheme();
@@ -52,7 +94,12 @@ const theme = createTheme();
 export default function CreateCv() {
   const [activeStep, setActiveStep] = React.useState(0);
 
+  const [cvInformation, dispatch] = useReducer(reducer, cvInfo);
+
   const handleNext = () => {
+    if (activeStep === steps.length - 1) {
+      printDocument();
+    }
     setActiveStep(activeStep + 1);
   };
 
@@ -106,7 +153,7 @@ export default function CreateCv() {
               </React.Fragment>
             ) : (
               <React.Fragment>
-                {getStepContent(activeStep)}
+                {getStepContent(activeStep, dispatch, cvInformation)}
                 <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
                   {activeStep !== 0 && (
                     <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>

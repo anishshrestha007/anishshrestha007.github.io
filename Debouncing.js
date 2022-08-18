@@ -1,3 +1,5 @@
+// Do something after few seconds when user has stopped typing or resizing
+
 const expensive = () => {
   console.log("Expensive Api call");
 };

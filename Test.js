@@ -231,25 +231,162 @@
 
 // console.log(endangeredSpecies("North America", "American bison"));
 
-function appendChildren(decorateDiv) {
-  var allDivs = document.getElementsByTagName("div");
-  let newAllDivs = [...allDivs];
-  newAllDivs = newAllDivs.slice();
+// function appendChildren(decorateDiv) {
+//   var allDivs = document.getElementsByTagName("div");
+//   let newAllDivs = [...allDivs];
+//   newAllDivs = newAllDivs.slice();
 
-  for (let i = 0; i < newAllDivs.length; i++) {
-    debugger;
-    var newDiv = document.createElement("div");
-    decorateDiv(newDiv);
-    allDivs[i].appendChild(newDiv);
+//   for (let i = 0; i < newAllDivs.length; i++) {
+//     debugger;
+//     var newDiv = document.createElement("div");
+//     decorateDiv(newDiv);
+//     allDivs[i].appendChild(newDiv);
+//   }
+// }
+
+// // Example case.
+// document.body.innerHTML = `
+// <div id="a">
+//   <div id="b">
+//   </div>
+// </div>`;
+
+// appendChildren(function (div) {});
+// console.log(document.body.innerHTML);
+
+// for (var index = 0; index < 10; index++) {
+//   setTimeout(() => {
+//     console.log(index);
+//   }, 0);
+// }
+
+// function add(a, b) {
+//   this.a = a;
+//   this.b = b;
+
+//   console.log(a + b);
+// }
+
+// add.prototype.assignA = function (a) {
+//   this.a = a;
+
+//   console.log("Assign A:", this.a + this.b);
+// };
+
+// add.prototype.assignB = function (b) {
+//   this.b = b;
+
+//   console.log("Assign B:", this.a + this.b);
+// };
+
+// const a = new add(10, 10);
+// a.assignA(20);
+// a.assignB(20);
+
+// function delay(timer) {
+//   return new Promise((resolve, reject) => {
+//     try {
+//       setTimeout(() => {
+//         console.log("delay");
+//         resolve();
+//       }, timer);
+//     } catch (error) {
+//       reject();
+//     }
+//   });
+// }
+
+// (async () => {
+//   console.log("Start");
+//   await delay(5000);
+//   console.log("End");
+// })();
+
+// function getNames(params) {
+//   let returnName = "";
+//   for (let obj of params) {
+//     if (obj.name) {
+//       returnName += obj.name;
+//     }
+//   }
+//   return returnName;
+// }
+// console.log(
+//   getNames([
+//     {
+//       name: "Anish1",
+//     },
+//     {
+//       age: "Anish",
+//     },
+//     {
+//       sex: "Anish",
+//     },
+//     {
+//       name: "Anish",
+//     },
+//     {
+//       name: "Anish2",
+//     },
+//   ])
+// );
+
+//Encapsulation
+let arrayOfThree = function () {
+  var data = [1, 2, 3];
+  // let obj = {
+  //   multiplyByTwo: function () {
+  //     data = data.map((it) => it * 2);
+  //     console.log("After Multiply", data);
+  //   },
+  //   divideByTwo: function () {
+  //     data = data.map((it) => it / 2);
+  //     console.log("After Divide", data);
+  //   },
+  // };
+  // return obj;
+  function nameless(params) {
+    console.log("Nameless");
   }
-}
+  return { nameless };
+};
+let first = arrayOfThree();
+let second = arrayOfThree();
 
-// Example case.
-document.body.innerHTML = `
-<div id="a">
-  <div id="b">
-  </div>
-</div>`;
+setTimeout(first.nameless, 2000);
+setTimeout(second.multiplyByTwo, 3000);
 
-appendChildren(function (div) {});
-console.log(document.body.innerHTML);
+//Inheritance
+// class Animals {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   animalName() {
+//     return `${name}`;
+//   }
+
+//   greet() {
+//     return `Hello I am ${name}`;
+//   }
+// }
+
+// //child class
+// class Pets extends Animals {
+//   constructor(name, species) {
+//     super(name);
+//     this.species = species;
+//   }
+
+//   speciesName() {
+//     return `${species}`;
+//   }
+
+//   //this method will override the "greet()" method of Animals class
+//   greet() {
+//     return `Hello my name is ${this.name}, I am a ${this.species}`;
+//   }
+// }
+
+// let pet1 = new Pets("T", "Dog");
+// console.log(pet1.greet());

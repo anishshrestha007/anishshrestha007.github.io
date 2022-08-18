@@ -1,89 +1,170 @@
-import * as React from "react";
-import Typography from "@mui/material/Typography";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import Grid from "@mui/material/Grid";
+import React, { useEffect, useState } from "react";
+import "./Review.css";
+import { getFormattedDate } from "./helpers/DateHelper";
 
-const products = [
-  {
-    name: "Product 1",
-    desc: "A nice thing",
-    price: "$9.99",
-  },
-  {
-    name: "Product 2",
-    desc: "Another thing",
-    price: "$3.45",
-  },
-  {
-    name: "Product 3",
-    desc: "Something else",
-    price: "$6.51",
-  },
-  {
-    name: "Product 4",
-    desc: "Best thing of all",
-    price: "$14.11",
-  },
-  { name: "Shipping", desc: "", price: "Free" },
-];
+export default function Review({ cvInfo: info }) {
+  const [reviewInfo, setReviewInfo] = useState(null);
 
-const addresses = ["1 MUI Drive", "Reactville", "Anytown", "99999", "USA"];
-const payments = [
-  { name: "Card type", detail: "Visa" },
-  { name: "Card holder", detail: "Mr John Smith" },
-  { name: "Card number", detail: "xxxx-xxxx-xxxx-1234" },
-  { name: "Expiry date", detail: "04/2024" },
-];
+  /*called useEffect where props as dependency because education list is dispatch on unmount*/
+  useEffect(() => {
+    setReviewInfo(info);
+  }, [info]);
 
-export default function Review() {
+  if (reviewInfo) {
+    var personalInfo = reviewInfo.personalInformation;
+    var experienceList = reviewInfo.experienceList;
+    var educationList = reviewInfo.educationList;
+  }
+
+  function getExperieceDOM() {
+    return experienceList.length
+      ? experienceList.map((data, i) => {
+          return (
+            <div key={i}>
+              {" "}
+              <div className="company-wrapper clearfix">
+                <div className="experience-title">{data.company}</div>
+                <div className="time">
+                  {getFormattedDate(data.fromDate)} -{" "}
+                  {getFormattedDate(data.toDate)}
+                </div>
+              </div>
+              <div className="job-wrapper clearfix">
+                <div className="experience-title">{data.position} </div>
+                <div className="company-description">
+                  <p>{data.description}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      : "No experiences";
+  }
+
+  function getEducationDOM() {
+    return educationList.length
+      ? educationList.map((data, i) => {
+          return (
+            <div key={i}>
+              {" "}
+              <div className="company-wrapper clearfix">
+                <div className="experience-title">{data.university}</div>
+                <div className="time">
+                  {getFormattedDate(data.fromDate)} -{" "}
+                  {getFormattedDate(data.toDate)}
+                </div>
+              </div>
+              <div className="job-wrapper clearfix">
+                <div className="experience-title">
+                  {data.degree}, {data.city}{" "}
+                </div>
+                <div className="company-description">
+                  <p>{data.subject}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      : "No Education";
+  }
+
   return (
-    <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Review CV
-      </Typography>
-      <List disablePadding>
-        {products.map((product) => (
-          <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
-            <ListItemText primary={product.name} secondary={product.desc} />
-            <Typography variant="body2">{product.price}</Typography>
-          </ListItem>
-        ))}
+    <>
+      {reviewInfo ? (
+        <div id="resume-wrapper" className="resume-wrapper">
+          <section className="profile section-padding">
+            <div className="container">
+              {personalInfo.photo !== "" && (
+                <div className="picture-resume-wrapper">
+                  <div className="picture-resume">
+                    <span>
+                      <img
+                        src={URL.createObjectURL(personalInfo.photo)}
+                        alt=""
+                      />
+                    </span>
+                  </div>
+                  <div className="clearfix"></div>
+                </div>
+              )}
 
-        <ListItem sx={{ py: 1, px: 0 }}>
-          <ListItemText primary="Total" />
-          <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            $34.06
-          </Typography>
-        </ListItem>
-      </List>
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Shipping
-          </Typography>
-          <Typography gutterBottom>John Smith</Typography>
-          <Typography gutterBottom>{addresses.join(", ")}</Typography>
-        </Grid>
-        <Grid item container direction="column" xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Payment details
-          </Typography>
-          <Grid container>
-            {payments.map((payment) => (
-              <React.Fragment key={payment.name}>
-                <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.name}</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.detail}</Typography>
-                </Grid>
-              </React.Fragment>
-            ))}
-          </Grid>
-        </Grid>
-      </Grid>
-    </React.Fragment>
+              <div className="name-wrapper">
+                <h1>
+                  {personalInfo.firstName} <br />
+                  {personalInfo.lastName}
+                </h1>
+              </div>
+              <div className="clearfix"></div>
+              <div className="contact-info clearfix">
+                <ul className="list-titles">
+                  <li>Call</li>
+                  <li>Mail</li>
+                  <li>Home</li>
+                </ul>
+                <ul className="list-content ">
+                  <li>{personalInfo.phone}</li>
+                  <li>{personalInfo.email}</li>
+                  <li>{personalInfo.address}</li>
+                </ul>
+              </div>
+              <div className="contact-presentation">
+                <p>{personalInfo.description} </p>
+              </div>
+              <div className="contact-social clearfix">
+                <ul className="list-content">
+                  {personalInfo.github && (
+                    <li>
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={personalInfo.github}
+                      >
+                        {personalInfo.github}
+                      </a>
+                    </li>
+                  )}
+                  {personalInfo.linkedin && (
+                    <li>
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={personalInfo.linkedin}
+                      >
+                        {personalInfo.linkedin}
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section className="experience section-padding">
+            <div className="container">
+              <h3 className="experience-title">Experience</h3>
+              <div className="experience-wrapper">{getExperieceDOM()}</div>
+              <h3 className="experience-title">Education</h3>
+              <div className="experience-wrapper">{getEducationDOM()}</div>
+              {/* TODO : Implement Skills */}
+              {/* <div className="section-wrapper clearfix">
+            <h3 className="section-title">Skills</h3>
+            <ul>
+              <li className="skill-percentage">HTML / HTML5</li>
+              <li className="skill-percentage">CSS / CSS3 / SASS / LESS</li>
+              <li className="skill-percentage">Javascript</li>
+              <li className="skill-percentage">Jquery</li>
+              <li className="skill-percentage">Wordpress</li>
+              <li className="skill-percentage">Photoshop</li>
+            </ul>
+          </div> */}
+            </div>
+          </section>
+
+          <div className="clearfix"></div>
+        </div>
+      ) : (
+        <></>
+      )}
+    </>
   );
 }
