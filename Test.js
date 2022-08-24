@@ -355,7 +355,17 @@ let second = arrayOfThree();
 
 setTimeout(first.nameless, 2000);
 setTimeout(second.multiplyByTwo, 3000);
+function Person(name) {
+  var _name = name;
+  function setName(name) {
+    _name = name;
+  }
+  function getName() {
+    return _name;
+  }
 
+  return [setName, getName];
+}
 //Inheritance
 // class Animals {
 //   constructor(name) {
