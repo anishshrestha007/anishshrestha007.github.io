@@ -46,7 +46,7 @@ export default function PortfolioExperience() {
             className="experience-button"
             onClick={(e) => changeTabs(e, 0)}
           >
-            Upstatement
+            TRO
           </button>
           <button
             id="tab-1"
@@ -57,7 +57,7 @@ export default function PortfolioExperience() {
             className="experience-button"
             onClick={(e) => changeTabs(e, 1)}
           >
-            Scout
+            Braindigit
           </button>
           <button
             id="tab-2"
@@ -68,7 +68,7 @@ export default function PortfolioExperience() {
             className="experience-button"
             onClick={(e) => changeTabs(e, 2)}
           >
-            Apple
+            Shangrila Micro-System
           </button>
 
           <div className="experience-highlight"></div>
@@ -82,35 +82,51 @@ export default function PortfolioExperience() {
             className="experience-detail-div"
           >
             <h3>
-              <span>Engineer</span>
+              <span>Sr. Software Engineer</span>
               <span className="company">
                 &nbsp;@&nbsp;
                 <a
-                  href="https://www.upstatement.com/"
+                  href="https://www.tro.com/"
                   className="inline-link"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  Upstatement
+                  TRO
                 </a>
               </span>
             </h3>
-            <p className="range">May 2018 - Present</p>
+            <p className="range">Sept 2021 - Present</p>
             <div>
               <ul>
+                <li>
+                  Worked with a team of 4 developers and 1 designers to build
+                  Financial(Invoicing) application, Promostaff Management
+                  System, Inventory Management System website , all the
+                  applications are internal
+                </li>
                 <li>
                   Write modern, performant, maintainable code for a diverse
                   array of client and internal projects
                 </li>
                 <li>
                   Work with a variety of different languages, platforms,
-                  frameworks, and content management systems such as JavaScript,
-                  TypeScript, Gatsby, React, Craft, WordPress, Prismic, and
-                  Netlify
+                  frameworks, and content management systems such as React, .Net
+                  Core, Microsoft SQL, React, JavaScript, Desktop Applications
                 </li>
                 <li>
-                  Communicate with multi-disciplinary teams of engineers,
-                  designers, producers, and clients on a daily basis
+                  Maintaining professionalism in areas such as: organizing
+                  meetings to make communication easy and transparent regarding
+                  project issues schedules, communication, delivery of the
+                  product and decisions on implementation.
+                </li>
+                <li>Experience in code review and demos.</li>
+                <li>
+                  Investigation, design, and implement scalable applications for
+                  data identification, analysis, retrieval, and indexing.
+                </li>
+                <li>
+                  Identify, prioritize and execute tasks in the software
+                  development life cycle
                 </li>
               </ul>
             </div>
@@ -124,41 +140,51 @@ export default function PortfolioExperience() {
             hidden
           >
             <h3>
-              <span>Studio Developer</span>
+              <span>Senior Software Engineer</span>
               <span className="company">
                 &nbsp;@&nbsp;
                 <a
-                  href="https://web.northeastern.edu/scout/"
+                  href="https://www.braindigit.com/"
                   className="inline-link"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  Scout
+                  Braindigit
                 </a>
               </span>
             </h3>
-            <p className="range">January - April 2018</p>
+            <p className="range">January 2018 - Aug 2021</p>
             <div>
               <ul>
                 <li>
-                  Worked with a team of three designers to build a marketing
-                  website and e-commerce platform for{" "}
+                  Worked with a team of 8 developers and 2 designers to build a
+                  Learning Management System website{" "}
                   <a
-                    href="https://blistabloc.com"
+                    href="https://neemaacademy.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    blistabloc
+                    neemaacademy
                   </a>
-                  , an ambitious startup originating from Northeastern
+                  , involved from scratch
                 </li>
                 <li>
-                  Helped solidify a brand direction for blistabloc that spans
-                  both packaging and web
+                  Work with a variety of different languages, platforms,
+                  frameworks, and content management systems such as React, .Net
+                  Core, Microsoft SQL, React, JavaScript
                 </li>
                 <li>
-                  Interfaced with clients on a weekly basis, providing
-                  technological expertise
+                  Coordinating with other developers with their work, issues,
+                  and attendance and providing status update every week and
+                  maintaining the smooth work environment among the team member.
+                </li>
+                <li>
+                  Involve in decision making about the project’s modules like
+                  breaking the modules in stories
+                </li>
+                <li>
+                  Interface with business analysts, developers, and technical
+                  support to determine optimal specifications.
                 </li>
               </ul>
             </div>
@@ -172,39 +198,41 @@ export default function PortfolioExperience() {
             hidden
           >
             <h3>
-              <span>UI Engineer Co-op</span>
+              <span>Software Engineer</span>
               <span className="company">
                 &nbsp;@&nbsp;
                 <a
-                  href="https://www.apple.com/music/"
+                  href="https://shangrila.com.np/"
                   className="inline-link"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  Apple
+                  Shangrila Micro-System
                 </a>
               </span>
             </h3>
-            <p className="range">July - December 2017</p>
+            <p className="range">June 2015 - January 2018</p>
             <div>
               <ul>
                 <li>
-                  Developed and shipped highly interactive web applications for
-                  Apple Music using Ember.js
+                  Consulted regularly with customers on project status,
+                  proposals and technical issues.
                 </li>
                 <li>
-                  Built and shipped the Apple Music Extension within Facebook
-                  Messenger leveraging third-party and internal APIs
+                  Transformed existing software to correct errors, upgrade
+                  interfaces, and improve efficiency.
                 </li>
                 <li>
-                  Architected and implemented the front-end of Apple Music's
-                  embeddable web player widget, which lets users log in and
-                  listen to full songs in the browser
+                  Cooperate diligently with other IT team members to plan,
+                  design, and develop smart solutions.
                 </li>
                 <li>
-                  Contributed extensively to MusicKit.js, a JavaScript framework
-                  that allows developers to add an Apple Music player to their
-                  web apps
+                  Write modular, secure and well-tested front-end code in
+                  JavaScript framework.
+                </li>
+                <li>
+                  Perform tasks efficiently and work together with the team to
+                  ensure project success.
                 </li>
               </ul>
             </div>
