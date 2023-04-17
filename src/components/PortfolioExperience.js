@@ -82,7 +82,7 @@ export default function PortfolioExperience() {
             className="experience-detail-div"
           >
             <h3>
-              <span>Sr. Software Engineer</span>
+              <span>Senior Software Engineer</span>
               <span className="company">
                 &nbsp;@&nbsp;
                 <a
@@ -128,6 +128,8 @@ export default function PortfolioExperience() {
                   Identify, prioritize and execute tasks in the software
                   development life cycle
                 </li>
+                <li>Worked in Agile/Scrum methodology</li>
+                <li>Used GIT for version control</li>
               </ul>
             </div>
           </div>
@@ -157,7 +159,7 @@ export default function PortfolioExperience() {
             <div>
               <ul>
                 <li>
-                  Worked with a team of 8 developers and 2 designers to build a
+                  Worked with a team of 5 developers and 2 designers to build a
                   Learning Management System website{" "}
                   <a
                     href="https://neemaacademy.com/"
@@ -171,7 +173,7 @@ export default function PortfolioExperience() {
                 <li>
                   Work with a variety of different languages, platforms,
                   frameworks, and content management systems such as React, .Net
-                  Core, Microsoft SQL, React, JavaScript
+                  Core, .Net MVC, Microsoft SQL, React, JavaScript
                 </li>
                 <li>
                   Coordinating with other developers with their work, issues,
@@ -186,6 +188,9 @@ export default function PortfolioExperience() {
                   Interface with business analysts, developers, and technical
                   support to determine optimal specifications.
                 </li>
+                <li>Experience in code review and demos.</li>
+                <li>Worked in Agile/Scrum methodology</li>
+                <li>Used GIT for version control</li>
               </ul>
             </div>
           </div>
@@ -207,7 +212,7 @@ export default function PortfolioExperience() {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  Shangrila Micro-System
+                  Shangrila MicroSystem
                 </a>
               </span>
             </h3>
@@ -215,8 +220,16 @@ export default function PortfolioExperience() {
             <div>
               <ul>
                 <li>
-                  Consulted regularly with customers on project status,
-                  proposals and technical issues.
+                  Work with a variety of different languages, platforms,
+                  frameworks such as ExtJs, .Net platforms, PostgreSQL,
+                  JavaScript
+                </li>
+                <li>
+                  Projects involved in Municipal Taxation System – Municipal
+                  Accounting System – Land Registration Management Information
+                  System – Building Permit Process Management System – Inventory
+                  and Assets Management System – Document Management and
+                  Tracking System – Planning Management System
                 </li>
                 <li>
                   Transformed existing software to correct errors, upgrade
@@ -226,14 +239,13 @@ export default function PortfolioExperience() {
                   Cooperate diligently with other IT team members to plan,
                   design, and develop smart solutions.
                 </li>
-                <li>
-                  Write modular, secure and well-tested front-end code in
-                  JavaScript framework.
-                </li>
+                <li></li>
                 <li>
                   Perform tasks efficiently and work together with the team to
                   ensure project success.
                 </li>
+                <li>Worked in Agile/Scrum methodology</li>
+                <li>Used GIT for version control</li>
               </ul>
             </div>
           </div>

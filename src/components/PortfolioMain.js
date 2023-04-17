@@ -15,12 +15,7 @@ export default function PortfolioMain() {
         </a>
         .
       </p>
-      <a
-        className="email-link"
-        href="https://www.newline.co/courses/build-a-spotify-connected-app"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a className="email-link" target="_blank" rel="noreferrer">
         Create Your Own Resume
       </a>
     </section>

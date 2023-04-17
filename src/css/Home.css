@@ -25,7 +25,20 @@ nav {
   top: 0;
   width: 100%;
 }
-
+nav .resume-button {
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-left: 15px;
+  font-size: var(--fz-xs);
+}
 nav .logo {
   color: #fff;
   font-size: 28px;
@@ -124,6 +137,7 @@ input[type="checkbox"] {
     color: cyan;
   }
 }
+
 .content {
   position: absolute;
   top: 50%;
@@ -335,8 +349,8 @@ h2 {
   visibility: visible;
 }
 
-@media (min-width: 700px) {
-  .jdfosx .inner {
+@media (min-width: 900px) {
+  .portfolio-experience .inner {
     min-height: 340px;
   }
 }
@@ -467,4 +481,39 @@ li > a {
   position: absolute;
   left: 0px;
   color: var(--green);
+}
+
+.portfolio-contact {
+  visibility: visible;
+  opacity: 1;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s,
+    transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+  max-width: 600px;
+  margin: 0px auto 100px;
+  text-align: center;
+}
+
+.portfolio-contact .title {
+  font-size: clamp(40px, 5vw, 60px);
+}
+
+.portfolio-contact .email-link {
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.75rem;
+  font-size: var(--fz-sm);
+  font-family: var(--font-mono);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 50px;
+}
+
+.portfolio-contact p {
+  margin: 20px 0px 60px;
+  max-width: 540px;
 }
