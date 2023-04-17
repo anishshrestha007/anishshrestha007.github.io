@@ -30,10 +30,17 @@ export default function CommonNav() {
           <a href="#">Work</a>
         </li>
         <li>
-          <a href="#">Contact</a>
+          <a href="#portfolio-contact">Contact</a>
         </li>
         <li>
-          <a href="#">Resume</a>
+          <a
+            class="resume-button"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
         </li>
       </ul>
     </nav>
