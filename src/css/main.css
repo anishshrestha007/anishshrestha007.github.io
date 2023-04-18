@@ -61,10 +61,12 @@ h2 {
   transition: var(--transition);
   margin-top: 50px;
 }
+
 .big-heading {
   margin: 0px;
   font-size: clamp(40px, 8vw, 80px);
 }
+
 .portfolio-main a {
   display: inline-block;
   text-decoration: none;
