@@ -1,6 +1,7 @@
 import React from "react";
 import portfolioIcon from "../portfolioIcon.PNG";
 import MenuIcon from "@mui/icons-material/Menu";
+
 export default function CommonNav() {
   function onAnchorTagClick() {
     const menuButton = document.getElementById("click");
