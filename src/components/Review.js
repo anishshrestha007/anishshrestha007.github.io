@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../css/Review.css";
+import "../css/review.css";
 import { getFormattedDate } from "../helpers/DateHelper";
 
 export default function Review({ cvInfo: info }) {

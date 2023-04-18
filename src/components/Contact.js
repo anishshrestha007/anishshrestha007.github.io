@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../css/contact.css";
 export default function Contact() {
   return (
     <section id="portfolio-contact" class="portfolio-contact">

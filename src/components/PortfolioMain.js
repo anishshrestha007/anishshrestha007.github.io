@@ -1,8 +1,8 @@
 import React from "react";
-
+import "../css/main.css";
 export default function PortfolioMain() {
   return (
-    <section id="portfolio-home" className="portfolio-home">
+    <section id="portfolio-main" className="portfolio-main">
       <h1>Hi, my name is</h1>
       <h2 className="big-heading">Anish Shrestha.</h2>
       <h3 className="big-heading">I build things for the web.</h3>

@@ -1,0 +1,31 @@
+.portfolio-contact {
+  visibility: visible;
+  opacity: 1;
+  max-width: 600px;
+  margin: 0px auto 100px;
+  text-align: center;
+}
+
+.portfolio-contact .title {
+  font-size: clamp(40px, 3vw, 60px);
+}
+
+.portfolio-contact .email-link {
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.75rem;
+  font-size: var(--fz-sm);
+  font-family: var(--font-mono);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 50px;
+}
+
+.portfolio-contact p {
+  margin: 20px 0px 60px;
+  max-width: 540px;
+}
