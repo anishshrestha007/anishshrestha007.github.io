@@ -12,6 +12,7 @@
 .portfolio-experience .inner {
   display: flex;
 }
+
 .portfolio-experience span > a,
 li > a {
   display: inline-block;
@@ -21,6 +22,7 @@ li > a {
   transition: var(--transition);
   color: var(--green);
 }
+
 .experience-tablist {
   position: relative;
   z-index: 3;
