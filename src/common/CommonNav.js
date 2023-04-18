@@ -1,6 +1,7 @@
 import React from "react";
 import portfolioIcon from "../portfolioIcon.PNG";
 import MenuIcon from "@mui/icons-material/Menu";
+import "../css/navbar.css";
 
 export default function CommonNav() {
   function onAnchorTagClick() {

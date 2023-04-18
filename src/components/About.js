@@ -1,5 +1,6 @@
 import React from "react";
 import profile from "../profile.jpeg";
+import "../css/about.css";
 export default function About() {
   return (
     <section id="portfolio-about" className="portfolio-about">

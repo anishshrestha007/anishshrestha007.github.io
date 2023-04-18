@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../css/experience.css";
 export default function PortfolioExperience() {
   function changeTabs(e, activeTab) {
     var r = document.querySelector(":root");
@@ -221,8 +221,8 @@ export default function PortfolioExperience() {
               <ul>
                 <li>
                   Work with a variety of different languages, platforms,
-                  frameworks such as ExtJs, .Net platforms, PostgreSQL,
-                  JavaScript
+                  frameworks such as ExtJs, .Net platforms, PostgreSQL, Dapper
+                  .Net, JavaScript
                 </li>
                 <li>
                   Projects involved in Municipal Taxation System – Municipal
