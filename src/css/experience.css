@@ -14,7 +14,7 @@
 }
 
 .portfolio-experience span > a,
-li > a {
+.portfolio-experience li > a {
   display: inline-block;
   text-decoration: none;
   text-decoration-skip-ink: auto;

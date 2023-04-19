@@ -75,3 +75,17 @@ h2 {
   position: relative;
   transition: var(--transition);
 }
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: inherit;
+  position: relative;
+  transition: var(--transition);
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
