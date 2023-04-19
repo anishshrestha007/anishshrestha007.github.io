@@ -1,5 +1,5 @@
 import React from "react";
-import portfolioIcon from "../portfolioIcon.PNG";
+import portfolioIcon from "../portfolioIcon.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import "../css/navbar.css";
 
@@ -28,15 +28,15 @@ export default function CommonNav() {
         <li>
           <a href="#portfolio-experience">Experience</a>
         </li>
-        <li>
+        {/* <li>
           <a href="#">Work</a>
-        </li>
+        </li> */}
         <li>
           <a href="#portfolio-contact">Contact</a>
         </li>
         <li>
           <a
-            class="resume-button"
+            className="resume-button"
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
