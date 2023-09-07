@@ -11,7 +11,14 @@ export default function About() {
             <p>
               Hello! My name is Anish Shrestha and I enjoy creating things that
               live on the internet. My interest in web development started back
-              in 2015 when I started as an intern in Shangrila MicroSystem
+              in 2015 when I started as an intern in{" "}
+              <a
+                href="https://shangrila.com.np/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Shangrila MicroSystem
+              </a>
             </p>
             <p>
               I had chance to work Municipal Taxation which was web based

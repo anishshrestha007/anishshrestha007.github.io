@@ -99,10 +99,9 @@ export default function PortfolioExperience() {
             <div>
               <ul>
                 <li>
-                  Worked with a team of 4 developers and 1 designers to build
-                  Financial(Invoicing) application, Promostaff Management
-                  System, Inventory Management System website , all the
-                  applications are internal
+                  Working with a team to build and maintain Financial(Invoicing)
+                  application, Promostaff Management System, Inventory
+                  Management System website , all the applications are internal
                 </li>
                 <li>
                   Write modern, performant, maintainable code for a diverse
