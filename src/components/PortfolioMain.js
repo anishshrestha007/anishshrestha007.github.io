@@ -15,8 +15,13 @@ export default function PortfolioMain() {
         </a>
         .
       </p>
-      <a className="email-link" target="_blank" rel="noreferrer">
-        Create Your Own Resume
+      <a
+        className="email-link"
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Resume
       </a>
     </section>
   );
