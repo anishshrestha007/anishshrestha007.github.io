@@ -34,7 +34,7 @@ export default function CommonNav() {
         <li>
           <a href="#portfolio-contact">Contact</a>
         </li>
-        <li>
+        {/* <li>
           <a
             className="resume-button"
             href="/resume.pdf"
@@ -43,7 +43,7 @@ export default function CommonNav() {
           >
             Resume
           </a>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
