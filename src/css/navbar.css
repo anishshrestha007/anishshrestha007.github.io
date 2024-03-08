@@ -34,7 +34,7 @@ nav .logo {
 }
 
 nav .portfolio-logo {
-  height: 5vmin;
+  height: 10vmin;
   pointer-events: none;
   color: #fff;
   font-size: 28px;
