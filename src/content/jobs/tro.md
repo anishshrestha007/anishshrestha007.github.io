@@ -6,7 +6,7 @@ start: 2021-09-01
 stack: [React, .NET Core, SQL Server, MongoDB]
 ---
 
-Building a workforce management system that schedules, manages and pays a temporary workforce, while supporting the internal invoicing, staff management and inventory systems already in production.
+Building and supporting TRO's internal systems: the personnel system, IBIS (warehouse inventory plus labor and vehicle management and scheduling), and the invoicing and reporting system. Together they schedule, manage and pay a temporary workforce.
 
 - Design and build features across the React front end and the .NET Core API.
 - Investigate and fix issues in deployed systems alongside new development.
