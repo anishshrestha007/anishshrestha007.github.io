@@ -1,0 +1,35 @@
+---
+// The mark: a folded-paper "A" in a hexagon. The hexagon colour comes from tokens.css.
+interface Props {
+  size?: number;
+  class?: string;
+}
+
+const { size = 56, class: className } = Astro.props;
+---
+
+<svg
+  class:list={["logo", className]}
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  width={size}
+  height={size}
+  aria-hidden="true"
+>
+  <path class="hex" d="M32 6 54.5 19v26L32 58 9.5 45V19z" stroke-width="6" stroke-linejoin="round"></path>
+  <path d="M32 12.5 15 48.5h9.4L32 32.4z" fill="#ffb26b"></path>
+  <path d="M32 12.5 49 48.5h-9.4L32 32.4z" fill="#f7833c"></path>
+  <path d="M32 32.4 26.8 43.4h10.4z" fill="#d9601c"></path>
+</svg>
+
+<style>
+  .logo {
+    display: block;
+    flex: none;
+  }
+
+  .hex {
+    fill: var(--logo-bg);
+    stroke: var(--logo-bg);
+  }
+</style>

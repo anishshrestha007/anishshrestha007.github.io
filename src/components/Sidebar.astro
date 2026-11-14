@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import logo from "../assets/logo.png";
+import Logo from "./Logo.astro";
 import { site } from "../data/site";
 
 const sections = [
@@ -13,7 +12,7 @@ const sections = [
 
 <header class="side">
   <div class="identity">
-    <Image class="logo" src={logo} alt="" width={56} densities={[1, 2]} loading="eager" />
+    <Logo size={56} class="mark" />
     <h1>{site.name}</h1>
     <p class="role">{site.role}</p>
     <p class="pitch">{site.pitch}</p>
@@ -85,8 +84,7 @@ const sections = [
     padding-block: var(--space-7) var(--space-6);
   }
 
-  .logo {
-    width: 56px;
+  .side :global(.mark) {
     margin-left: -4px;
     margin-bottom: var(--space-5);
   }

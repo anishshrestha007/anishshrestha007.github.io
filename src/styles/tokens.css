@@ -11,6 +11,7 @@
   --accent: #b4470c; /* text-safe orange, 5:1 on --bg */
   --accent-fill: #f7833c; /* logo orange, for marks and fills */
   --on-accent: #1a0d03;
+  --logo-bg: #112d4e;
 
   --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -47,5 +48,6 @@
     --line: #223a5b;
     --accent: #ff9a57;
     --accent-fill: #f7833c;
+    --logo-bg: #1c3f6b;
   }
 }

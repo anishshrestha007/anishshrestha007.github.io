@@ -33,6 +33,8 @@ Most updates are content edits, not code changes.
 | About and Contact copy            | `src/pages/index.astro`                                 |
 | Colours, type scale, spacing      | `src/styles/tokens.css`                                 |
 | Résumé                            | Replace `public/resume.pdf`                             |
+| Portrait photo                    | Replace `src/assets/profile.jpg`                        |
+| Logo                              | `src/components/Logo.astro` and `public/favicon.svg`    |
 
 Adding a Markdown file to `src/content/jobs` or `src/content/projects` adds it to the
 site. The frontmatter fields are validated by the schemas in `src/content.config.ts`,
@@ -47,7 +49,7 @@ src/
   content.config.ts  schemas for both collections
   data/site.ts       identity, links and skills
   layouts/Base.astro document head, fonts, global styles
-  components/        Sidebar, ProjectCard, JobItem
+  components/        Sidebar, ProjectCard, JobItem, Logo
   pages/             index, projects/[slug], 404
   styles/            tokens.css and global.css
 public/              résumé, favicon, social image

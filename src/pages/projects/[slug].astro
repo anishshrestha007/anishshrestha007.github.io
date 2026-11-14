@@ -1,7 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
-import logo from "../../assets/logo.png";
+import Logo from "../../components/Logo.astro";
 import { site } from "../../data/site";
 import Base from "../../layouts/Base.astro";
 
@@ -22,7 +21,7 @@ const { Content } = await render(project);
   <div class="page">
     <header class="top">
       <a class="home" href="/" aria-label={`${site.name}, home`}>
-        <Image src={logo} alt="" width={40} densities={[1, 2]} loading="eager" />
+        <Logo size={40} />
         <span>{site.name}</span>
       </a>
       <a class="back" href="/#work">← All work</a>
@@ -74,10 +73,6 @@ const { Content } = await render(project);
     color: var(--ink);
     font-weight: 600;
     text-decoration: none;
-  }
-
-  .home img {
-    width: 40px;
   }
 
   .back {

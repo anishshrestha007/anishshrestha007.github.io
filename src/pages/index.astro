@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import profile from "../assets/profile.jpeg";
+import profile from "../assets/profile.jpg";
 import JobItem from "../components/JobItem.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Sidebar from "../components/Sidebar.astro";
@@ -43,28 +43,30 @@ const jobs = (await getCollection("jobs")).sort(
 
       <section id="about" aria-labelledby="about-heading">
         <h2 id="about-heading">About</h2>
-        <div class="prose">
-          <p>
-            I started in 2015 as an intern at Shangrila MicroSystem, working on a municipal
-            taxation system, and was promoted to software engineer there. Since then I have
-            worked on both sides of the stack: Angular and ExtJS on ASP.NET Web API early
-            on, then React on .NET Core for the last several years.
-          </p>
-          <p>
-            Most of what I build is line-of-business software: taxation, e-learning,
-            invoicing and workforce management. I like the part of the job where a vague
-            requirement becomes a clear API and a screen that people can use without
-            training.
-          </p>
+        <div class="intro">
+          <Image
+            class="portrait"
+            src={profile}
+            alt="Portrait of Anish Shrestha"
+            width={400}
+            widths={[200, 400]}
+            sizes="200px"
+          />
+          <div class="prose">
+            <p>
+              I started in 2015 as an intern at Shangrila MicroSystem, working on a municipal
+              taxation system, and was promoted to software engineer there. Since then I have
+              worked on both sides of the stack: Angular and ExtJS on ASP.NET Web API early
+              on, then React on .NET Core for the last several years.
+            </p>
+            <p>
+              Most of what I build is line-of-business software: taxation, e-learning,
+              invoicing and workforce management. I like the part of the job where a vague
+              requirement becomes a clear API and a screen that people can use without
+              training.
+            </p>
+          </div>
         </div>
-        <Image
-          class="photo"
-          src={profile}
-          alt="Anish standing beside the River Thames, with Tower Bridge behind him"
-          width={1280}
-          widths={[480, 800, 1280]}
-          sizes="(min-width: 62.5rem) 620px, 100vw"
-        />
         <dl class="skills">
           {
             skills.map(({ group, items }) => (
@@ -126,12 +128,14 @@ const jobs = (await getCollection("jobs")).sort(
     list-style: none;
   }
 
-  .photo {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    object-position: 50% 45%;
-    margin-top: var(--space-6);
+  .intro {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .portrait {
+    width: 9rem;
+    aspect-ratio: 1;
     border-radius: var(--radius);
   }
 
@@ -174,6 +178,17 @@ const jobs = (await getCollection("jobs")).sort(
   }
 
   @media (min-width: 40rem) {
+    .intro {
+      grid-template-columns: minmax(0, 1fr) 12.5rem;
+      gap: var(--space-6);
+      align-items: start;
+    }
+
+    .portrait {
+      order: 1;
+      width: 100%;
+    }
+
     .skills {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
