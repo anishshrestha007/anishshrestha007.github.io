@@ -4,7 +4,7 @@ Personal portfolio, built with [Astro](https://astro.build) and deployed to GitH
 
 ## Develop
 
-Requires Node 22.23 or newer.
+Requires Node 22.23.4 or newer (Node 24 recommended; `.nvmrc` pins it for nvm users).
 
 ```bash
 npm install
