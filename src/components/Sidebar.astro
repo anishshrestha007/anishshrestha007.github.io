@@ -51,29 +51,44 @@ const sections = [
 
 <script>
   // Mark the nav link for the section currently in view.
-  const links = new Map(
-    [...document.querySelectorAll<HTMLAnchorElement>("[data-section]")].map((a) => [
-      a.dataset.section!,
-      a,
-    ]),
-  );
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        for (const [id, link] of links) {
-          if (id === entry.target.id) link.setAttribute("aria-current", "true");
-          else link.removeAttribute("aria-current");
-        }
-      }
-    },
-    // A thin band a third of the way down the viewport decides the active section.
-    { rootMargin: "-30% 0px -65% 0px" },
-  );
-  for (const id of links.keys()) {
-    const section = document.getElementById(id);
-    if (section) observer.observe(section);
+  const sections = [
+    ...document.querySelectorAll<HTMLAnchorElement>("[data-section]"),
+  ].flatMap((link) => {
+    const el = document.getElementById(link.dataset.section!);
+    return el ? [{ el, link }] : [];
+  });
+
+  function update() {
+    const viewport = window.innerHeight;
+    const remaining = document.documentElement.scrollHeight - viewport - window.scrollY;
+    // The active section is the last one whose top has crossed a line a third of the
+    // way down the viewport. Near the end of the page the line slides down to the
+    // bottom edge, so short final sections that can never scroll that high still
+    // get their turn.
+    const line = Math.max(viewport / 3, viewport - remaining);
+    let active = sections[0];
+    for (const section of sections) {
+      if (section.el.getBoundingClientRect().top <= line) active = section;
+    }
+    for (const section of sections) {
+      if (section === active) section.link.setAttribute("aria-current", "true");
+      else section.link.removeAttribute("aria-current");
+    }
   }
+
+  let queued = false;
+  function schedule() {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      queued = false;
+      update();
+    });
+  }
+
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", schedule);
+  update();
 </script>
 
 <style>
