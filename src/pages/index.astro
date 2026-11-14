@@ -1,0 +1,202 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import profile from "../assets/profile.jpeg";
+import JobItem from "../components/JobItem.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Sidebar from "../components/Sidebar.astro";
+import { site, skills } from "../data/site";
+import Base from "../layouts/Base.astro";
+
+const projects = (await getCollection("projects", ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const jobs = (await getCollection("jobs")).sort(
+  (a, b) => b.data.start.getTime() - a.data.start.getTime(),
+);
+---
+
+<Base>
+  <div class="shell">
+    <Sidebar />
+
+    <main id="main">
+      {
+        projects.length > 0 && (
+          <section id="work" aria-labelledby="work-heading">
+            <h2 id="work-heading">Selected work</h2>
+            <div class="cards">
+              {projects.map((project) => (
+                <ProjectCard project={project} />
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      <section id="experience" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Experience</h2>
+        <ol class="jobs">
+          {jobs.map((job) => <JobItem job={job} />)}
+        </ol>
+      </section>
+
+      <section id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <div class="prose">
+          <p>
+            I started in 2015 as an intern at Shangrila MicroSystem, working on a municipal
+            taxation system, and was promoted to software engineer there. Since then I have
+            worked on both sides of the stack: Angular and ExtJS on ASP.NET Web API early
+            on, then React on .NET Core for the last several years.
+          </p>
+          <p>
+            Most of what I build is line-of-business software: taxation, e-learning,
+            invoicing and workforce management. I like the part of the job where a vague
+            requirement becomes a clear API and a screen that people can use without
+            training.
+          </p>
+        </div>
+        <Image
+          class="photo"
+          src={profile}
+          alt="Anish standing beside the River Thames, with Tower Bridge behind him"
+          width={1280}
+          widths={[480, 800, 1280]}
+          sizes="(min-width: 62.5rem) 620px, 100vw"
+        />
+        <dl class="skills">
+          {
+            skills.map(({ group, items }) => (
+              <div>
+                <dt class="meta">{group}</dt>
+                <dd>{items.join(", ")}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Get in touch</h2>
+        <div class="prose">
+          <p>
+            Have a question, a role in mind, or just want to say hello? Email is the best
+            way to reach me.
+          </p>
+        </div>
+        <a class="email" href={`mailto:${site.email}`}>{site.email}</a>
+      </section>
+
+      <footer class="meta">
+        <p>
+          © {new Date().getFullYear()}{" "}{site.name} · <a href={site.repo}>Source on GitHub</a>
+        </p>
+      </footer>
+    </main>
+  </div>
+</Base>
+
+<style>
+  .shell {
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  section {
+    padding-block: var(--space-7);
+    border-top: 1px solid var(--line);
+  }
+
+  h2 {
+    margin-bottom: var(--space-5);
+    font-size: var(--text-xl);
+  }
+
+  .cards {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .jobs {
+    display: grid;
+    gap: var(--space-7);
+    padding: 0;
+    list-style: none;
+  }
+
+  .photo {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: 50% 45%;
+    margin-top: var(--space-6);
+    border-radius: var(--radius);
+  }
+
+  .skills {
+    display: grid;
+    gap: var(--space-4) var(--space-6);
+    margin-top: var(--space-6);
+  }
+
+  .skills dt {
+    margin-bottom: var(--space-1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .skills dd {
+    color: var(--ink);
+  }
+
+  .email {
+    display: inline-block;
+    margin-top: var(--space-5);
+    color: var(--ink);
+    font-size: clamp(1.25rem, 0.9rem + 1.6vw, 1.75rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    overflow-wrap: anywhere;
+    text-decoration-color: var(--accent-fill);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+  }
+
+  .email:hover {
+    color: var(--accent);
+  }
+
+  footer {
+    padding-block: var(--space-6) var(--space-7);
+    border-top: 1px solid var(--line);
+  }
+
+  @media (min-width: 40rem) {
+    .skills {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 62.5rem) {
+    .shell {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: var(--space-8);
+    }
+
+    main {
+      padding-top: var(--space-9);
+    }
+
+    section {
+      padding-block: var(--space-8);
+    }
+
+    section:first-of-type {
+      padding-top: 0;
+      border-top: 0;
+    }
+  }
+</style>

@@ -1,0 +1,51 @@
+/* Design tokens. Navy and orange are taken from the logo. */
+:root {
+  color-scheme: light dark;
+
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --ink: #112d4e;
+  --ink-soft: #3b4f6b;
+  --muted: #5b6a80;
+  --line: #ddd8cc;
+  --accent: #b4470c; /* text-safe orange, 5:1 on --bg */
+  --accent-fill: #f7833c; /* logo orange, for marks and fills */
+  --on-accent: #1a0d03;
+
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-display: clamp(2.5rem, 1.6rem + 3.6vw, 3.75rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 6rem;
+
+  --radius: 12px;
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --measure: 65ch;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1a2e;
+    --surface: #10243f;
+    --ink: #eaeff6;
+    --ink-soft: #c5d0e0;
+    --muted: #94a5bd;
+    --line: #223a5b;
+    --accent: #ff9a57;
+    --accent-fill: #f7833c;
+  }
+}

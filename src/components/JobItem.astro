@@ -1,0 +1,72 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+
+interface Props {
+  job: CollectionEntry<"jobs">;
+}
+
+const { job } = Astro.props;
+const { company, url, role, start, end, stack } = job.data;
+const { Content } = await render(job);
+
+const fmt = new Intl.DateTimeFormat("en-GB", {
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+---
+
+<li class="job">
+  <p class="meta when">
+    <time datetime={start.toISOString().slice(0, 7)}>{fmt.format(start)}</time>
+    {" — "}
+    {end ? <time datetime={end.toISOString().slice(0, 7)}>{fmt.format(end)}</time> : "Present"}
+  </p>
+  <div class="body">
+    <h3>
+      {role}{" "}
+      <span class="at">
+        · {url ? <a href={url} rel="noopener">{company}</a> : company}
+      </span>
+    </h3>
+    <div class="prose"><Content /></div>
+    <ul class="tags" aria-label="Technologies">
+      {stack.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+</li>
+
+<style>
+  .job {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .when {
+    padding-top: 0.3rem;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+  }
+
+  .at {
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  .prose {
+    margin-top: var(--space-3);
+  }
+
+  .tags {
+    margin-top: var(--space-4);
+  }
+
+  @media (min-width: 40rem) {
+    .job {
+      grid-template-columns: 9.5rem minmax(0, 1fr);
+      gap: var(--space-5);
+    }
+  }
+</style>

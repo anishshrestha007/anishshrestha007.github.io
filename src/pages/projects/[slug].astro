@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import logo from "../../assets/logo.png";
+import { site } from "../../data/site";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects", ({ data }) => !data.draft);
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { title, company, period, summary, stack, url } = project.data;
+const { Content } = await render(project);
+---
+
+<Base title={title} description={summary}>
+  <div class="page">
+    <header class="top">
+      <a class="home" href="/" aria-label={`${site.name}, home`}>
+        <Image src={logo} alt="" width={40} densities={[1, 2]} loading="eager" />
+        <span>{site.name}</span>
+      </a>
+      <a class="back" href="/#work">← All work</a>
+    </header>
+
+    <main id="main">
+      <article>
+        <p class="meta">{company} · {period}</p>
+        <h1>{title}</h1>
+        <p class="lead">{summary}</p>
+        <ul class="tags" aria-label="Technologies">
+          {stack.map((item) => <li>{item}</li>)}
+        </ul>
+        <div class="prose"><Content /></div>
+        {
+          url && (
+            <p class="visit">
+              <a class="button" href={url} rel="noopener">
+                Visit the site <span aria-hidden="true">↗</span>
+              </a>
+            </p>
+          )
+        }
+      </article>
+    </main>
+  </div>
+</Base>
+
+<style>
+  .page {
+    max-width: 46rem;
+    margin-inline: auto;
+    padding: var(--space-5) var(--gutter) var(--space-9);
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+    font-size: var(--text-sm);
+  }
+
+  .home {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .home img {
+    width: 40px;
+  }
+
+  .back {
+    white-space: nowrap;
+  }
+
+  h1 {
+    margin-top: var(--space-3);
+    font-size: var(--text-display);
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+  }
+
+  .lead {
+    margin-top: var(--space-5);
+    max-width: var(--measure);
+    color: var(--ink);
+    font-size: var(--text-lg);
+    line-height: 1.5;
+  }
+
+  .tags {
+    margin-top: var(--space-5);
+  }
+
+  .prose {
+    margin-top: var(--space-7);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--line);
+  }
+
+  .visit {
+    margin-top: var(--space-7);
+  }
+</style>

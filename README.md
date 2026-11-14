@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# anishshrestha007.github.io
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio, built with [Astro](https://astro.build) and deployed to GitHub Pages.
 
-## Available Scripts
+## Develop
 
-In the project directory, you can run:
+Requires Node 22.23 or newer.
 
-### `npm start`
+```bash
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm run dev
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Command           | What it does                                |
+| ----------------- | ------------------------------------------- |
+| `npm run dev`     | Local dev server at `http://localhost:4321` |
+| `npm run build`   | Production build into `dist/`               |
+| `npm run preview` | Serve the production build locally          |
+| `npm run check`   | Type-check `.astro` and `.ts` files         |
 
-### `npm test`
+## Editing content
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Most updates are content edits, not code changes.
 
-### `npm run build`
+| To change                         | Edit                                                    |
+| --------------------------------- | ------------------------------------------------------- |
+| Name, role, pitch, links, skills  | `src/data/site.ts`                                      |
+| A job in the Experience timeline  | `src/content/jobs/*.md`                                 |
+| A project card and its case study | `src/content/projects/*.md`                             |
+| About and Contact copy            | `src/pages/index.astro`                                 |
+| Colours, type scale, spacing      | `src/styles/tokens.css`                                 |
+| Résumé                            | Replace `public/resume.pdf`                             |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Adding a Markdown file to `src/content/jobs` or `src/content/projects` adds it to the
+site. The frontmatter fields are validated by the schemas in `src/content.config.ts`,
+so a missing or mistyped field fails the build with a clear message. Set `draft: true`
+on a project to keep it out of the build.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+  content/           jobs and projects as Markdown
+  content.config.ts  schemas for both collections
+  data/site.ts       identity, links and skills
+  layouts/Base.astro document head, fonts, global styles
+  components/        Sidebar, ProjectCard, JobItem
+  pages/             index, projects/[slug], 404
+  styles/            tokens.css and global.css
+public/              résumé, favicon, social image
+```
 
-### `npm run eject`
+## Deploy
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`.github/workflows/deploy.yml` builds the site and publishes it on every push to
+`master`. It needs the repository's Pages source set to **GitHub Actions**
+(Settings → Pages → Build and deployment → Source).
