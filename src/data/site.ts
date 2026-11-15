@@ -2,9 +2,9 @@ export const site = {
   name: "Anish Shrestha",
   role: "Senior Full-Stack Engineer",
   pitch:
-    "I build business software end to end with .NET Core and React: invoicing, workforce management and e-learning platforms that teams rely on every day.",
+    "I build business software end to end with .NET and React: invoicing, workforce management and e-learning platforms that teams rely on every day.",
   description:
-    "Anish Shrestha is a senior full-stack engineer in London, working with .NET Core and React since 2015.",
+    "Anish Shrestha is a senior full-stack engineer in London, working with .NET and React since 2015.",
   location: "London, UK",
   rightToWork: "right to work in the UK (Skilled Worker visa)",
   email: "anishronnie@gmail.com",
@@ -22,7 +22,7 @@ export const site = {
 export const skills = [
   {
     group: "Backend",
-    items: ["C#", ".NET Core", "ASP.NET Web API", "Entity Framework", "Dapper"],
+    items: ["C#", ".NET 10", ".NET Core", "ASP.NET Web API", "Entity Framework", "Dapper"],
   },
   {
     group: "Frontend",

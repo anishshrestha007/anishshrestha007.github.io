@@ -18,7 +18,9 @@ const sections = [
     <p class="meta where">{site.location}</p>
     <p class="pitch">{site.pitch}</p>
     <div class="actions">
-      <a class="button primary" href={site.resume}>Résumé <span class="meta">PDF</span></a>
+      <a class="button primary" href={site.resume} target="_blank" rel="noopener">
+        Résumé <span class="meta">PDF</span>
+      </a>
       <a class="button" href={`mailto:${site.email}`}>Email me</a>
     </div>
   </div>
