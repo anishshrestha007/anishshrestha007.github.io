@@ -3,7 +3,7 @@ company: Braindigit
 url: https://www.braindigit.com/
 role: Senior Software Engineer
 start: 2018-01-01
-end: 2021-08-01
+end: 2021-09-01
 stack: [React, Material UI, .NET Core, .NET MVC, SQL Server, MongoDB]
 ---
 
