@@ -6,9 +6,9 @@ start: 2021-09-01
 stack: [React, .NET Core, SQL Server, MongoDB]
 ---
 
-Building and supporting TRO's internal systems: the personnel system, IBIS (warehouse inventory plus labor and vehicle management and scheduling), and the invoicing and reporting system. Together they schedule, manage and pay a temporary workforce.
+Build and support three internal systems used by 50 staff: a personnel system for HR records and salaries (similar to Workday), an event management system for staffing, scheduling and warehouse inventory, and an invoicing and reporting system.
 
-- Design and build features across the React front end and the .NET Core API.
-- Investigate and fix issues in deployed systems alongside new development.
-- Review code, run demos, and keep delivery decisions visible to the team.
-- Automate repetitive tasks with tooling and scripts.
+- Delivered the event management system across the React front end, .NET Core API and SQL Server schema, with user management secured by Okta multi-factor authentication.
+- Wrote a scheduled script that syncs form submissions from the Connecteam API into the company database for Power BI reports, saving 10 hours of manual work a week.
+- Investigate and fix production issues every day, alongside new development.
+- Review code for a team of three and present finished work in sprint demos.

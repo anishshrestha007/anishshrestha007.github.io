@@ -2,22 +2,23 @@
 title: Municipal taxation system
 company: Shangrila MicroSystem
 period: 2015 — 2018
-summary: Web-based ERP software that municipalities use to collect and account for tax.
+summary: Web-based ERP software that over 100 municipalities use to collect and account for tax.
 stack: [Angular, ExtJS, ASP.NET Web API, Dapper, PostgreSQL]
 order: 3
 ---
 
 ## What it is
 
-A web application responsible for municipal tax collection, part of a wider suite that also covered municipal accounting, land registration, building permits, inventory and assets, document tracking and planning.
+A web application responsible for municipal tax collection, used by over 100 municipalities. It is part of a wider suite that also covers municipal accounting, land registration, building permits, inventory and assets, document tracking and planning.
 
 ## What I did
 
 I joined as an intern and was promoted to software engineer while working on it.
 
-- Built front-end modules in Angular and ExtJS against an ASP.NET Web API back end.
-- Reworked existing screens to fix errors, update interfaces and improve efficiency.
-- Consulted with customers on project status, proposals and technical issues.
+- Migrated the legacy desktop taxation application to a web app built with ExtJS, ASP.NET Web API and Dapper.
+- Built front-end modules in Angular and ExtJS for taxation, accounting, land registration and building permits.
+- Reworked the land taxation screens to fix errors and speed up tax calculation.
+- Met customers regularly to report project status and resolve technical issues.
 
 ## Stack
 

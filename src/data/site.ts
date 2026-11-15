@@ -4,7 +4,9 @@ export const site = {
   pitch:
     "I build business software end to end with .NET Core and React: invoicing, workforce management and e-learning platforms that teams rely on every day.",
   description:
-    "Anish Shrestha is a senior full-stack engineer working with .NET Core and React since 2015.",
+    "Anish Shrestha is a senior full-stack engineer in London, working with .NET Core and React since 2015.",
+  location: "London, UK",
+  rightToWork: "right to work in the UK (Skilled Worker visa)",
   email: "anishronnie@gmail.com",
   resume: "/resume.pdf",
   links: [
@@ -27,6 +29,8 @@ export const skills = [
     items: ["React", "TypeScript", "JavaScript", "Angular", "Material UI"],
   },
   { group: "Data", items: ["SQL Server", "PostgreSQL", "T-SQL", "MongoDB"] },
+  { group: "Cloud and delivery", items: ["AWS", "Jenkins", "Docker", "Git"] },
+  { group: "Testing", items: ["Jest", "xUnit"] },
   {
     group: "Practice",
     items: ["API design", "Performance tuning", "Code review", "Agile / Scrum"],

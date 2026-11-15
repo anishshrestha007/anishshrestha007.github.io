@@ -2,7 +2,7 @@
 title: Neema Academy learning platform
 company: Braindigit
 period: 2018 — 2021
-summary: A learning management system and e-learning platform, built from scratch by a team of seven.
+summary: A learning management system and e-learning platform, built from scratch by a team of seven and now used by hundreds of schools.
 stack: [React, Material UI, .NET Core, SQL Server, MongoDB]
 url: https://neemaacademy.com/
 order: 2
@@ -10,14 +10,14 @@ order: 2
 
 ## What it is
 
-Neema Academy is an e-learning platform. I was on the project from the start, in a team of five developers and two designers.
+Neema Academy is an e-learning platform. I was on the project from the start, in a team of five developers and two designers. It went from first commit to launch in 15 months and reached thousands of users and hundreds of schools.
 
 ## What I did
 
-- Designed and developed features on both the React front end and the .NET Core back end.
-- Broke modules down into stories and took part in deciding how each was built.
-- Mentored junior developers and gave weekly status updates for the team.
-- Worked with business analysts and technical support to pin down specifications.
+- Worked across the full system, from database schema to .NET Core API to React screens.
+- Introduced KaTeX to store and render maths formulas, which saved the data-entry team many hours.
+- Mentored two junior developers through code review and day-to-day support.
+- Broke modules down into stories and agreed specifications with business analysts before build.
 
 ## Stack
 

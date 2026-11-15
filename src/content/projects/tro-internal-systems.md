@@ -1,27 +1,29 @@
 ---
-title: Personnel, IBIS and invoicing systems
+title: Personnel, event management and invoicing systems
 company: TRO
 period: 2021 — Present
-summary: Three internal systems covering personnel, warehouse inventory, labor and vehicle scheduling, and invoicing and reporting.
+summary: Three internal systems, used by 50 staff, that cover HR, event operations, and invoicing and reporting.
 stack: [React, .NET Core, SQL Server, MongoDB]
 order: 1
 ---
 
 ## What it is
 
-TRO runs its operations on a set of internal systems. I work across three of them:
+TRO runs its operations on a set of internal systems, used by 50 staff. I work across three of them:
 
-- **Personnel system.** Manages the temporary workforce.
-- **IBIS.** Warehouse inventory, plus management and scheduling of labor resources and vehicles.
-- **Invoicing and reporting system.** Handles invoicing and reporting for the business.
+- **Personnel system.** An internal HR system, similar to Workday. It holds employee information, employment status and salaries.
+- **Event management system.** Where event jobs are planned and resourced. It covers staffing, the booking and scheduling of labour and vehicles, venues, warehouse inventory, CRM and purchase orders.
+- **Invoicing and reporting system.** Raises invoices and produces the business's reports.
 
-Together they schedule, manage and pay a temporary workforce.
+Between them they cover HR, event operations and finance.
 
 ## What I do
 
-- Build features across the stack, from React screens to .NET Core endpoints and the SQL Server schema behind them.
-- Support the systems in production, investigating and fixing issues while new work continues.
-- Take part in design and architecture decisions, code review and demos.
+- Delivered the event management system across the stack: React screens, .NET Core endpoints and the SQL Server schema behind them.
+- Secured user management with Okta multi-factor authentication.
+- Wrote a scheduled script that syncs form submissions from the Connecteam API into the company database for Power BI reports. It saves 10 hours of manual work a week.
+- Investigate and fix production issues every day, alongside new development.
+- Review code for a team of three, take part in design and architecture decisions, and present finished work in sprint demos.
 
 ## Stack
 
