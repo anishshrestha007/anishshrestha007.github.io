@@ -11,7 +11,7 @@ order: 1
 
 TRO runs its operations on a set of internal systems, used by 50 staff. I work across four of them:
 
-- **Personnel system.** An internal HR system, similar to Workday. It holds employee information, employment status and salaries.
+- **Personnel system.** An internal HR system. It holds employee information, employment status and salaries.
 - **Event management system.** Where event jobs are planned and resourced. It covers staffing, the booking and scheduling of labour and vehicles, venues, warehouse inventory, CRM and purchase orders.
 - **Invoicing and reporting system.** Raises invoices and produces the business's reports.
 - **Payroll application.** A web app for the finance team that prepares payroll for the workforce managed in Liveforce, a third-party staffing platform.
